@@ -2,6 +2,7 @@ package com.example.manisha.decodecc;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,15 @@ public class RateActivity extends AppCompatActivity {
         protected void onCreate (Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_rate);
+
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            toolbar.setTitle("Rate Us");
+            setSupportActionBar(toolbar);
+
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+            toolbar.setNavigationIcon(android.support.v7.appcompat.R.drawable.abc_ic_ab_back_material);
 
             final EditText t = (EditText) findViewById(R.id.editText_review);
             //t.setGravity(Gravity.CENTER);
@@ -63,6 +73,12 @@ public class RateActivity extends AppCompatActivity {
         private void toastMessage (String message){
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
     }
 
 

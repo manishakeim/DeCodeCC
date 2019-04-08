@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.manisha.decodecc">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,8 +10,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +19,57 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".PollingActivity"></activity>
-        <activity android:name=".RateActivity"></activity>
-        <activity android:name=".ResultActivity"></activity>
-        <activity android:name=".kyc.KYC"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PollingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".kyc.KYC"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".kyc.Affidavit"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".nav.Admin"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".nav.Add_cand"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".nav.upload_voting"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".nav.helpdesk"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".nav.poll_station"
+            android:screenOrientation="portrait" />
+        <activity android:name=".SearchActivity"/>
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".VehicleHandle"></activity>
+        <activity android:name=".thirdGenderFacility"></activity>
+        <activity android:name=".SMSActivity" />
     </application>
 
 </manifest>

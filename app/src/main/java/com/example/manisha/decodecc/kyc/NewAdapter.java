@@ -41,7 +41,7 @@ public class NewAdapter extends RecyclerView.Adapter<NewsViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull NewsViewHolder holder, int position) {
         ApiObject apiObject = apiObjectList.get(position);
-        holder.title.setText("Candidate Name: " + apiObject.getTitle());
+        holder.title.setText("Candidate Name: \n" + apiObject.getTitle());
         holder.description.setText(apiObject.getDescription());
 
         String image_url = apiObject.getSymbolUrl();
@@ -51,12 +51,12 @@ public class NewAdapter extends RecyclerView.Adapter<NewsViewHolder> {
 
 
         if (image_url != null) {
-            Picasso.get().load(image_url).resize(250, 180)
+            Picasso.get().load(image_url).resize(200, 200)
                     .into(holder.symbol);
         }
 
         if (can_img_url != null) {
-            Picasso.get().load(can_img_url).resize(250, 350)
+            Picasso.get().load(can_img_url).resize(200, 200)
                     .into(holder.candImg);
         }
 

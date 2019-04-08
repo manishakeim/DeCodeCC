@@ -12,6 +12,7 @@ public interface RetrofitApiService {
     @GET("v2/5ca9a1053700007200492e91")
     Call<List<Polling>> getPollingData();
 
-    @GET("v2/5ca9afb63700007200492ea0")
+//    @GET("v2/5ca9afb63700007200492ea0")
+    @GET("v2/5cab9c53300000720010319b")
     public Call<List<ApiObject>> getAllPost();
 }

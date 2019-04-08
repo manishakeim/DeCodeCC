@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -36,8 +37,14 @@ public class KYC extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kyc);
 
-        getSupportActionBar().setTitle("Know Your Candidates");
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Know Your Candidate");
+        setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationIcon(android.support.v7.appcompat.R.drawable.abc_ic_ab_back_material);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_id);
         adapter = new NewAdapter(this, candidates);
@@ -87,6 +94,12 @@ public class KYC extends AppCompatActivity  {
                 Log.d(TAG, "error loading from API");
             }
         });
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
 
